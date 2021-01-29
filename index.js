@@ -39,6 +39,7 @@ async function postData(url, body) {
 }
 
 /**
+ * resolves a particular question
  * @param {JSON} rules 
  * @param {Array} numbers 
  * @returns {Object} answerObject
@@ -57,7 +58,9 @@ function resolveTest(rules, numbers) {
     return { answer: finalResult.join(' ') }
 }
 
-
+/**
+ * App entry point. Keeps resolving questions as long as there is a nextQuestion
+ */
 async function resolveFizzbot() {
     const baseUrl = "https://api.noopschallenge.com"
     let body = {answer: "JS"}
